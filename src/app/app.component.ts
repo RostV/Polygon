@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'RostV Polygon';
+  title = 'RostV Polygon :)';
   showModules = false;
 
   showHideCLick($event: any) {
