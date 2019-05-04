@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProjectVM } from '../../view-models/project.view-model';
-import { projects, ProjectRoute } from 'src/app/models/project.model';
-import { Router, RouterEvent, NavigationEnd } from '@angular/router';
+import { projects, } from 'src/app/models/project.model';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'projects-list',
@@ -10,7 +10,9 @@ import { Router, RouterEvent, NavigationEnd } from '@angular/router';
 })
 export class ProjectsListComponent implements OnInit {
   
-  projects: ProjectVM[] = projects.map(pr => new ProjectVM(pr));
+  @Output() selectedChange = new EventEmitter<ProjectVM>();
+
+  projects: ProjectVM[] = projects.map(pr => new ProjectVM(pr)); 
 
   constructor(router: Router) {
     router.events.subscribe( event => {
@@ -24,6 +26,7 @@ export class ProjectsListComponent implements OnInit {
   }
 
   selectProject(pr: ProjectVM) {
+    this.selectedChange.emit(pr);
     this.projects.forEach(project => {
       project.selected = project === pr;
     });

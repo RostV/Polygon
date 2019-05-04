@@ -16,7 +16,7 @@
       <div class="content-section">
         <mat-sidenav-container class="sidenav">
             <mat-sidenav class="sidenav-projects" mode=side [opened]=showModules>
-              <projects-list>
+              <projects-list (selectedChange)="onProjectChange($event)">
               </projects-list>
             </mat-sidenav>
             <mat-sidenav-content >

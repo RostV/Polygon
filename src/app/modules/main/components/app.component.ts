@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProjectVM } from '../view-models/project.view-model';
 
 @Component({
   selector: 'app-root',
@@ -6,10 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'RostV Polygon :)';
+  title = "";
   showModules = false;
 
   showHideCLick($event: any) {
     this.showModules = !this.showModules;
+  }
+
+  onProjectChange($event: ProjectVM) {
+    this.title = $event.name;
   }
 }
