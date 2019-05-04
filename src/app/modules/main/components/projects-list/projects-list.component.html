@@ -1,0 +1,5 @@
+<mat-nav-list>
+  <div [ngClass]="{'selected-project': project.selected}" (click)="selectProject(project)" *ngFor="let project of projects" >
+    <a mat-list-item routerLink="{{project.route}}"> {{project.name}} </a>
+  </div>
+</mat-nav-list>
