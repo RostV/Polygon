@@ -1,4 +1,4 @@
-import { Project, ProjectRoute } from 'src/app/models/project.model';
+import { Project, ProjectRoute } from 'src/app/modules/main/models/project.model';
 
 export class ProjectVM implements Project {
   name: string;

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { ProjectVM } from '../../view-models/project.view-model';
-import { projects, } from 'src/app/models/project.model';
+import { projects, } from 'src/app/modules/main/models/project.model';
 import { Router, NavigationEnd } from '@angular/router';
 
 @Component({

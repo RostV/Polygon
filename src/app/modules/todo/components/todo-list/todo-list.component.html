@@ -1,0 +1,14 @@
+<div class="todo-list-wrapper">
+  <div class="todo-list-items">
+      <mat-checkbox *ngFor="let todoItem of todoList.todos" [checked]=todoItem.done>
+        {{todoItem.title}}
+      </mat-checkbox>
+    </div>
+  <div class="new-item-block">
+      <mat-form-field>
+        <input #taskName matInput placeholder="Наименование задачи">
+      </mat-form-field>
+      <button mat-raised-button color="primary" (click)="newTask(taskName)">Добавить задачу</button>
+  </div>
+
+</div>

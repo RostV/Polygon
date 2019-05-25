@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodoHelperService } from '../../services/todo-helper.service';
 
 @Component({
   selector: 'app-main-todo',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainTodoComponent implements OnInit {
 
-  constructor() { }
+  private days: string[];
+
+  constructor(private todoHelper: TodoHelperService) { 
+    this.days = todoHelper.days;
+  }
 
   ngOnInit() {
   }
